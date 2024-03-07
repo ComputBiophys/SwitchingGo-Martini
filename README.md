@@ -118,4 +118,4 @@ echo 0 | gmx trjconv -s md1.tpr -f md_rottrans.xtc -o md_start.pdb -dump 0
 ```
 
 ## Reference
-Yang, S., & Song, C. (2024). Switching Gō-Martini for Investigating Protein Conformational Transitions and Associated Protein–Lipid Interactions. *Journal of Chemical Theory and Computation*.
+Yang, S., & Song, C. (2024). Switching Gō-Martini for Investigating Protein Conformational Transitions and Associated Protein–Lipid Interactions. *Journal of chemical theory and computation*.
