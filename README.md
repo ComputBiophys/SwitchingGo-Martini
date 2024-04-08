@@ -28,8 +28,8 @@ Then, we download the [martini 3.0 force field](http://www.cgmartini.nl/images/m
 
 ```
 # download the martini_v3.0.0.itp
-sed -i "s/\\[ nonbond_params \\]/\\#ifdef GO_VIRT\\n\\#include \\"BB-part-def_VirtGoSites.itp\\"\\n\\#endif\\n\\n\\[ nonbond_params \\]/" martini_v3.0.0.itp
-echo -e "\\n#ifdef GO_VIRT \\n#include \\"go-table_VirtGoSites.itp\\"\\n#endif" >> martini_v3.0.0.itp
+sed -i "s/\[ nonbond_params \]/\#ifdef GO_VIRT\n\#include \"BB-part-def_VirtGoSites.itp\"\n\#endif\n\n\[ nonbond_params \]/" martini_v3.0.0.itp
+echo -e "\n#ifdef GO_VIRT \n#include \"go-table_VirtGoSites.itp\"\n#endif" >> martini_v3.0.0.itp
 mv martini_v3.0.0.itp martini_v3.0.0_Active.itp
 mkdir ActiveITP
 mv *.itp ActiveITP
@@ -45,8 +45,8 @@ martinize2 -f 2RH1_clean.pdb -o system.top -x Protein_Inactive_cg.pdb -dssp dssp
 python create_goVirt_for_multimer.py -r 2RH1_clean.pdb -s Protein_Inactive_cg.pdb -f 2RH1_clean.map --moltype Inactive --go_eps 12 --Natoms 681
 
 # download the martini_v3.0.0.itp again.
-sed -i "s/\\[ nonbond_params \\]/\\#ifdef GO_VIRT\\n\\#include \\"BB-part-def_VirtGoSites.itp\\"\\n\\#endif\\n\\n\\[ nonbond_params \\]/" martini_v3.0.0.itp
-echo -e "\\n#ifdef GO_VIRT \\n#include \\"go-table_VirtGoSites.itp\\"\\n#endif" >> martini_v3.0.0.itp
+sed -i "s/\[ nonbond_params \]/\#ifdef GO_VIRT\n\#include \"BB-part-def_VirtGoSites.itp\"\n\#endif\n\n\[ nonbond_params \]/" martini_v3.0.0.itp
+echo -e "\n#ifdef GO_VIRT \n#include \"go-table_VirtGoSites.itp\"\n#endif" >> martini_v3.0.0.itp
 mv martini_v3.0.0.itp martini_v3.0.0_Inactive.itp
 mkdir InactiveITP
 mv *.itp InactiveITP
