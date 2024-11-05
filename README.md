@@ -64,8 +64,8 @@ sed -i "s/NA+    NA+/NA      NA/g" ions.gro
 sed -i "s/CL-    CL-/CL      CL/g" ions.gro
 sed -i "s/NA+/NA /g" system.top
 sed -i "s/CL-/CL /g" system.top
-vi system.top # Delete 2 CL in system.top and ions.gro. The error is because the virtual atoms without charges are also calculated by insane.py.
-vi ions.gro
+vi system.top # Delete 2 CL in system.top and ions.gro. The error arises because the virtual atoms without charges are also recognized as regular charged residues by insane.py.
+vi ions.gro # Delete 2 CL in ions.gro.
 
 ```
 
